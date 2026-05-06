@@ -22,5 +22,11 @@ public class ShippingCalculatorTest {
         assertThrows(IllegalArgumentException.class,
                 () -> calc.calculate(-1, "STANDARD"));
     }
+    @Test
+    void testNullType() {
+        // Chúng ta mong đợi IllegalArgumentException, nhưng code sẽ văng NullPointerException
+        assertThrows(IllegalArgumentException.class,
+                () -> calc.calculate(5, null));
+    }
 }
 
